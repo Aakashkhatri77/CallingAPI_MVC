@@ -1,0 +1,39 @@
+﻿@model List<Post>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .card img {
+        width: 100%;
+    }
+
+    .rounded {
+        border-radius: 0.25rem !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto;
+    }
+
+    img, svg {
+        vertical-align: middle;
+    }
+</style>
+<div class="row g-4 gx-3">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4">
+            <div class="card shadow-sm rounded">
+                <a href="@item.Image_link_small">
+                    <img src="@item.Image_link_medium" class="default rounded" alt="57 Quality Nepali Names That Start With D">
+                </a>
+                <div class="p-2 pt-3">
+                    <h3 class="card-title"><a href="">@item.Title</a></h3>
+                </div>
+            </div>
+        </div>
+    }
+</div>

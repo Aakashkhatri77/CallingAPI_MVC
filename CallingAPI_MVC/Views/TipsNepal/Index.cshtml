@@ -1,0 +1,133 @@
+﻿@model IEnumerable<CallingAPI_MVC.Models.TipsNepal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.date_gmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modified)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modified_gmt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.link)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.featured_media)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.comment_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ping_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sticky)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.template)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.format)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jetpack_featured_media_url)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_gmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modified)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modified_gmt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.type)
+            </td>
+            <td>
+                @*<a href="@item.link">Test</a>*@
+                @Html.DisplayFor(modelItem => item.link)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.featured_media)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.comment_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ping_status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sticky)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.template)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.format)
+            </td>
+            <td>
+                <img src="@item.jetpack_featured_media_url" height="20" width="20" />
+                @*@Html.DisplayFor(modelItem => item.jetpack_featured_media_url)*@
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
